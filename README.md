@@ -19,7 +19,7 @@ Pull requests are welcome!
 
 Add [size-classes.min.js](docs/size-classes.min.js) to your page
 
-##### Classes applied to `body`
+#### Classes applied to `body`
 
 - `sc-wc` when the width of the window is compact
 - `sc-wr` when the width of the window is regular
