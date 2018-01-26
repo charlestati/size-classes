@@ -1,0 +1,40 @@
+{
+  "name": "size-classes",
+  "description": "iOS Size Classes in CSS",
+  "version": "1.0.0",
+  "repository": "https://github.com/charlestati/size-classes.git",
+  "author": "Charles Tatibouet <git@charlestati.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build-scripts": "babel src/size-classes.js --out-file docs/size-classes.js --source-maps",
+    "watch-scripts": "yarn run build-scripts --watch",
+    "minify-scripts": "uglifyjs docs/size-classes.js --compress --mangle --output docs/size-classes.min.js",
+    "serve": "browser-sync start --server docs/ --files docs/ --no-ghost-mode --no-notify --no-open",
+    "build": "npm-run-all build-scripts minify-scripts",
+    "fix": "eslint --fix \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "test": "npm run lint",
+    "start": "npm-run-all build-scripts --parallel watch-scripts serve",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.16.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.1",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.10.2",
+    "uglify-js": "^3.3.8"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="iOS Size Classes in CSS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>iOS Size Classes in CSS</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -ms-overflow-style: scrollbar;
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 1.2rem;
+      font-weight: normal;
+      line-height: 1.5;
+      color: #fff;
+      text-align: left;
+      background-color: #2a2e42;
+    }
+
+    .instructions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 15vh;
+      padding-right: 15px;
+      padding-left: 15px;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .instructions__text {
+      margin: 0;
+    }
+
+    .instructions__link {
+      color: #5573ff;
+      text-decoration: none;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .instructions__link:hover,
+    .instructions__link:focus,
+    .instructions__link:active {
+      opacity: 0.8;
+    }
+
+    .sc-wc .instructions {
+      height: auto;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .cards {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      height: 85vh;
+      min-height: 400px;
+    }
+
+    .sc-wc .cards {
+      height: auto;
+    }
+
+    @media (min-width: 1920px) {
+      .cards {
+        height: auto;
+      }
+    }
+
+    .card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      margin: 1rem;
+      text-align: center;
+      flex-direction: column;
+      background-color: #3a4255;
+      border-radius: 17px;
+    }
+
+    .card__text {
+      margin: 0;
+      color: #fff;
+    }
+
+    .card__note {
+      padding-right: 10px;
+      padding-left: 10px;
+      margin: 0;
+      font-size: 0.8rem;
+      color: #7d8ba4;
+    }
+
+    .card_wc-hc {
+      width: 17vmax;
+      min-width: 222px;
+      height: 9.56vmax;
+      min-height: 125px;
+    }
+
+    .card_wc-hr {
+      width: 9.56vmax;
+      min-width: 125px;
+      height: 17vmax;
+      min-height: 222px;
+    }
+
+    .card_wr-hc {
+      width: 18.76vmax;
+      min-width: 245px;
+      height: 10.55vmax;
+      min-height: 138px;
+    }
+
+    .card_wr-hr {
+      width: 19.6vmax;
+      min-width: 256px;
+      height: 26.11vmax;
+      min-height: 341px;
+    }
+
+    .sc-wc.sc-hc .card_wc-hc,
+    .sc-wc.sc-hr .card_wc-hr,
+    .sc-wr.sc-hc .card_wr-hc,
+    .sc-wr.sc-hr .card_wr-hr {
+      background-color: #655fff;
+    }
+
+    .sc-wr.sc-hc .card_wr-hc .card__note {
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="sc-wr sc-hr">
+<main>
+  <div class="instructions">
+    <p class="instructions__text">Resize your window or rotate your device to see it in action 👇</p>
+    <p class="instructions__text"><a class="instructions__link" href="https://github.com/charlestati/size-classes">Read the doc on GitHub</a>
+    </p>
+  </div>
+  <div class="cards">
+    <div class="card card_wc-hc">
+      <p class="card__text">Width Compact</p>
+      <p class="card__text">Height Compact</p>
+    </div>
+    <div class="card card_wc-hr">
+      <p class="card__text">Width Compact</p>
+      <p class="card__text">Height Regular</p>
+    </div>
+    <div class="card card_wr-hc">
+      <p class="card__text">Width Regular</p>
+      <p class="card__text">Height Compact</p>
+      <p class="card__note">iPhone Plus devices have a regular width in landscape orientation</p>
+    </div>
+    <div class="card card_wr-hr">
+      <p class="card__text">Width Regular</p>
+      <p class="card__text">Height Regular</p>
+    </div>
+  </div>
+</main>
+<script src="size-classes.js"></script>
+</body>
+</html>
